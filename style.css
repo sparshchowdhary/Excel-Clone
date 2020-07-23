@@ -1,0 +1,304 @@
+html,
+body {
+  margin: 0px;
+  padding: 0px;
+  background-color: white;
+}
+
+* {
+   box-sizing: 	border-box;
+   outline: none;
+}
+
+#container {
+  display: flex;
+  flex-direction: column;
+}
+
+#heading {
+  background-color: olivedrab;
+  text-align: center;
+  color: white;
+  z-index: 1;
+}
+
+.menu-container {
+  display:flex;
+  flex-direction:row;
+}
+
+#menu-content-container{
+  display: flex;
+  flex-direction: row;
+  height: 60px;
+}
+
+.menu-row {
+  display: flex;
+  flex-direction: row;
+  margin: 2px;
+}
+
+.menu-row > * {
+  margin: 0px 5px;
+  cursor: pointer;
+  border: 0.5px solid lightgray ;
+  border-radius: 2px;
+  height: 21px;
+}
+
+.menu-row > input {
+  width: 25px;
+}
+
+.menu-row > input:hover {
+  transform: scale(1.2);
+}
+
+#font-family {
+   width: 95px;
+   font-size: 9px
+}
+
+#font-size {
+  width: 60px;
+  font-size: 9px
+}
+
+.menu-group{
+  display: flex;
+  flex-direction: column;
+  border-right: 0.5px solid lightgray ;
+  border-radius: 5px;
+}
+
+
+#menu-bar{
+  display: flex;
+  flex-direction: row;
+  height: 20px;
+}
+#menu-bar > div{
+  padding: 4px;
+  font-size: 12px;
+  cursor: pointer;
+  height: 20px;
+
+}
+#menu-bar > div:hover , #menu-bar > div.selected{
+  border-top: 2px solid black;
+}
+
+#file-menu-container{
+  margin: 10 px;
+  border: 2 px solid lightgray;
+  cursor: pointer;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 3;
+}
+
+.dropdown-content div {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content div:hover {background-color: #f1f1f1}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.dropdown:hover #file-menu {
+  background-color: lightgreen;
+  transform: scale(1.2);
+}
+
+#bold.selected, #italic.selected, #underline.selected, #alignment-menu-container input.selected {
+  background-color: teal;
+  color: white;  
+}
+
+#formula-bar{
+  display: flex;
+  flex-direction: row;
+  background-color: white;
+  height: 20px;
+  margin-bottom: 2px;
+}
+
+#formula-bar > #cellFormula{
+  flex: 3%;
+  margin-left: 5px;
+}
+
+#formula-bar > #separator{
+  flex: 1%;
+  text-align: center;
+  background-color: white;
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+#formula-bar > #textFormula{
+  flex: 96%;
+  margin-right: 5px;
+}
+
+#content-container{
+  position: relative;
+  overflow: auto;
+  height: calc(100vh - 146px);
+}
+
+#topleftcell {
+  position: absolute;
+  top:0px;
+  left:0px;
+  height: 25px;
+  width: 25px;
+  background-color: darkolivegreen;
+  border-color: black;
+  z-index: 2;
+}
+
+.cell{
+  width: 70px;
+  border: 0.5px solid lightgray;
+  box-sizing: border-box;
+  cursor: cell;
+  line-height: 25px;
+  border-radius: 2px;
+
+}
+
+.cell.selected{
+  border: 1px solid black;
+}
+
+#firstrow {
+  position:absolute;
+  left:25px;
+  height:25px;
+  background-image: linear-gradient( lawngreen, olive);
+  display: flex;
+  flex-direction: row;
+  border-color: black;
+  z-index: 1;
+}
+
+#first-row .cell{
+        
+  border: 0.5px solid white;
+  padding: 0px;
+  text-align: center;
+
+}
+
+#firstcol {
+  position:absolute;
+  top:25px;
+  width:25px;
+  background-image: linear-gradient(to left, lawngreen, olive);
+  display: flex;
+  flex-direction: column;
+  border-color: black;
+  z-index: 1;
+}
+
+#grid {
+  position: absolute;
+  top: 25px;
+  left: 25px;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+}
+
+.cell {
+  width: 100px;
+  border: 0.5px solid lightgrey;
+  text-align: center;
+  box-sizing: border-box;
+  line-height: 25px;
+  font-size: 11px;
+  padding-left: 5px;
+  border-radius: 0.5px;
+}
+
+.cell.selected {
+   border: 0.5px solid black
+}
+
+#firstcol .cell {
+  width: 25px;
+  border-color: white;
+  font-size: 14px;
+  text-align: center;
+  padding-left: 0px;
+}
+
+#sheets-bar {
+  display: flex;
+  flex-direction: row;
+  height: 25px;
+  border-top: 0.5px solid black;
+  border-bottom: 0.5px solid black;
+  padding: 3px;
+  background-image: linear-gradient(to right, lightblue,cyan);
+}
+
+#sheets-bar > .ss{
+  padding:2px;
+  border-left: 1px solid black;
+  border-right: 1px solid black;
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
+  border-top-left-radius: 3px;
+  border-bottom-right-radius: 3px;
+  font-size: 10px;
+  cursor: pointer;
+  background-color: mediumspringgreen;
+  margin-right: 4px;
+}
+
+#sheets-bar > .ss:hover{
+  border-bottom: 1px solid black;
+  font-weight: bold;
+}
+
+#sheets-bar > #add{
+  width: 25px;
+  text-align: center;
+  border-left: 1px solid black;
+  border-right: 1px solid black;
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
+  border-radius: 13px;
+  margin-left: 5px;
+  background-color: greenyellow;
+  cursor: pointer;
+}
+
+#sheets-bar > #add:hover{
+  border-bottom: 1px solid black;
+  font-weight: bold;
+}

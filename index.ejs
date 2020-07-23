@@ -1,0 +1,130 @@
+<html>
+
+   <head>
+     <title ><%=pageName%></title>
+     <link rel="stylesheet" type="text/css" href="./style.css"/>
+   </head>
+
+<body>
+   
+   <div id="container">
+
+      <div id="heading"><%=title%></div> 
+      
+      <div id="menu-bar">
+         <div class="dropdown">
+            <div id="file-menu" data-content="file-menu-container">File</div>
+            <div class="dropdown-content">
+               <div id="new">New</div>
+               <div id="open">Open</div>
+               <div id="save">Save</div>
+           </div>
+         </div>
+         <div id="home-menu" data-content="home-menu-container">Home</div>
+         <div id="data-menu" data-content="data-menu-container">Data</div>
+          
+      </div>
+
+      <div id="menu-content-container">
+           
+         <div class="menu-container" id="file-menu-container" >
+            
+         </div>
+         
+         <div class="menu-container" id="home-menu-container">
+            
+            <div class="menu-group" id="font-menu-container">
+              
+               <div class="menu-row">
+                  <select id="font-family">
+                     <option value="Georgia">Georgia</option>
+                     <option value="Arial">Arial</option>
+                     <option value="Impact">Impact</option>
+                     <option value="Tahoma">Tahoma</option>
+                  </select>
+                  <select id="font-size">
+                     <option value="8">8</option>
+                     <option value="10">10</option>
+                     <option value="12">12</option>
+                     <option value="14">14</option>
+                   </select>
+               </div>
+               
+               <div class="menu-row">
+                  <input id="bold" type="button" value="B">
+                  <input id="italic" type="button" value="I">
+                  <input id="underline" type="button" value="U">
+                  <input id="bg-colour" type="color" value="#FFFFFF">
+                  <input id="text-colour" type="color" value="#000000">
+               </div>
+            
+            </div>   
+
+            <div class="menu-group" id="align-menu-container">
+               
+               <div class="menu-row">
+                  <input id="top-align" type="button" prop-val="top" class="valign" value="T">
+                  <input id="middle-align" type="button" prop-val="middle" class="valign" value="M">
+                  <input id="bottom-align" type="button" prop-val="bottom" class="valign" value="B"> 
+               </div>
+
+               <div class="menu-row">
+                  <input id="left-align" type="button" prop-val="left" class="halign" value="L">
+                  <input id="center-align" type="button" prop-val="center" class="halign" value="C">
+                  <input id="right-align" type="button" prop-val="right" class="halign" value="R"> 
+               </div>
+
+            </div>
+
+         </div>
+
+         <div class="menu-container" id="data-menu-container"></div>
+      </div>
+      
+      <div id="formula-bar">
+         <input type="text" id="cellFormula" readonly="true">
+         <div id="separator">fx: </div>
+         <input type="text" id="textFormula">
+      </div>
+      
+      <div id="content-container">
+
+         <div id="topleftcell"></div>
+         
+         <div id="firstrow">
+           <% for(let j=0; j < col; j++){ %>
+              <div class="cell"><%= String.fromCharCode('A'.charCodeAt(0)+j)%></div>
+           <% } %>
+         </div>
+
+         <div id="firstcol">
+           <% for(let i=0;i < row; i++){ %>
+              <div class="cell"><%= i+1 %></div>
+           <% } %>
+         </div>
+
+         <div id="grid">
+            <% for(let i=0;i < row; i++){ %>
+               <div class="row">
+                 <% for(let j=0;j < col;j++){ %>
+                    <div class="cell" contenteditable="true" rid="<%=i%>" cid="<%=j%>"></div>
+                 <% } %>
+               </div> 
+            <%}%>
+         </div>
+
+      </div>
+      
+      <div id="sheets-bar">
+         <div class="ss">Sheet 1</div>
+         <div class="ss">Sheet 2</div>
+         <div class="ss">Sheet 3</div>
+         <div id="add">+</div>
+      </div>
+
+   </div>
+
+   <script src=./index.js></script>
+</body>
+
+</html>
